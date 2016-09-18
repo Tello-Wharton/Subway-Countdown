@@ -13,6 +13,8 @@ public class Board extends JPanel {
     private JPanel timeInput;
     private JButton start;
 
+    private JButton fullScreen;
+
     private int hour;
     private int minute;
 
@@ -44,6 +46,19 @@ public class Board extends JPanel {
 
     }
 
+    public void init(){
+
+    }
+
+    public JButton addFullScreen(){
+
+        fullScreen = new JButton("Fullscreen");
+        fullScreen.setVisible(false);
+        add(fullScreen);
+
+        return fullScreen;
+    }
+
     private class StartListener implements ActionListener{
 
         @Override
@@ -53,10 +68,11 @@ public class Board extends JPanel {
                 hour = Integer.parseInt(hourInput.getText());
                 minute = Integer.parseInt(minuteInput.getText());
             }catch (NumberFormatException exception){
-
+                return;
             }
 
             timeInput.setVisible(false);
+            fullScreen.setVisible(true);
         }
     }
 
