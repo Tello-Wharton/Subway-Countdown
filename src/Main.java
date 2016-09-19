@@ -40,6 +40,7 @@ public class Main extends JFrame{
         setVisible(true);
         setSize(width,height);
         add(board);
+        setFocusable(true);
         JButton fullscreen = board.addFullScreen();
         fullscreen.addActionListener(new FullScreenEffect());
     }
